@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'The Coder online',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.cyan,
       ),
-      home: MyHomePage(title: 'Home Page'),
+      home: MyHomePage(title: 'Main Page'),
     );
   }
 }
