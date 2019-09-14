@@ -4,7 +4,7 @@ import 'package:thecoder/main_screen.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,26 +23,38 @@ class MyHomePage extends StatelessWidget {
 
   final String title;
 
+  AppBar myAppBar(){
+    return AppBar(
+        title: Text(title),
+      );
+  }
+  
+  Widget homeBody(BuildContext context){
+  return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          
+          FlatButton(
+            child: Text("test the 21 Cards Game"),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(
+                builder: (BuildContext context){
+                  return MainScreen();
+                  }
+                ),
+              );
+            },
+          )
+        ],
+      );
+}
+
   @override
   Widget build(BuildContext context) {
    
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            FlatButton(
-              child: Text("test the 21 Cards Game"),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){return MainScreen();}));
-              },
-            )
-          ],
-        ),
-      ), 
+      appBar: myAppBar(),
+      body: homeBody(context),
     );
   }
 }

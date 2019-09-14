@@ -86,8 +86,8 @@ class _MainScreenState extends State<MainScreen> {
           color: Colors.white,
           border: Border.all(color: Colors.black),
         ),
-        height: 140.0,
-        width: 90.0,
+        height: 70.0,
+        width: 45.0,
         child: Stack(
           children: <Widget>[
             Center(
@@ -96,10 +96,10 @@ class _MainScreenState extends State<MainScreen> {
                 children: <Widget>[
                   Text(
                     _cardTypeToString(index, myList),
-                    style: TextStyle(fontSize: 32.0),
+                    style: TextStyle(fontSize: 16.0),
                   ),
                   Container(
-                    height: 40.0,
+                    height: 20.0,
                     child: _suitToImage(index, myList),
                   ),
                 ],
@@ -115,10 +115,10 @@ class _MainScreenState extends State<MainScreen> {
                   children: <Widget>[
                     Text(
                       _cardTypeToString(index, myList),
-                      style: TextStyle(fontSize: 20.0),
+                      style: TextStyle(fontSize: 10.0),
                     ),
                     Container(
-                      height: 20.0,
+                      height: 10.0,
                       child: _suitToImage(index, myList),
                     )
                   ],
@@ -147,103 +147,106 @@ class _MainScreenState extends State<MainScreen> {
       );
     }
 
-    Column myBody() {
-      return Column(
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(top: 8.0),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    cardsFace(0, leftStack),
-                    cardsFace(1, leftStack),
-                    cardsFace(2, leftStack),
-                    cardsFace(3, leftStack),
-                    cardsFace(4, leftStack),
-                    cardsFace(5, leftStack),
-                    cardsFace(6, leftStack),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 8.0),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    cardsFace(0, middleStack),
-                    cardsFace(1, middleStack),
-                    cardsFace(2, middleStack),
-                    cardsFace(3, middleStack),
-                    cardsFace(4, middleStack),
-                    cardsFace(5, middleStack),
-                    cardsFace(6, middleStack),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 8.0),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    cardsFace(0, rightStack),
-                    cardsFace(1, rightStack),
-                    cardsFace(2, rightStack),
-                    cardsFace(3, rightStack),
-                    cardsFace(4, rightStack),
-                    cardsFace(5, rightStack),
-                    cardsFace(6, rightStack),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 16.0),
-          ),
-          Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-
-              children: <Widget>[
-                Text(
-                  noteText,
-                  style: TextStyle(color: Colors.indigo[50], fontSize: 40.0),
-                  textAlign: TextAlign.center,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 16.0),
-                ),
-                RaisedButton(
-                  padding: EdgeInsets.all(8.0),
-                  elevation: 4.0,
-                  child: Text(
-                    btnText,
-                    style: TextStyle(
-                      color: Colors.red[200],
-                      fontSize: 40
-                    ),
+    Widget myBody() {
+      return ListView(
+              children:<Widget> [Column(
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
                   ),
-                  color: Colors.green[900],
-                  onPressed: () {
-                    if (round != 3) {
-                      _stackSelection(context);
-                    } else {
-                      setState(() {
-                        _initMagic();
-                      });
-                    }
-                  },
-                ),
-              ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      cardsFace(0, leftStack),
+                      cardsFace(1, leftStack),
+                      cardsFace(2, leftStack),
+                      cardsFace(3, leftStack),
+                      cardsFace(4, leftStack),
+                      cardsFace(5, leftStack),
+                      cardsFace(6, leftStack),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      cardsFace(0, middleStack),
+                      cardsFace(1, middleStack),
+                      cardsFace(2, middleStack),
+                      cardsFace(3, middleStack),
+                      cardsFace(4, middleStack),
+                      cardsFace(5, middleStack),
+                      cardsFace(6, middleStack),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      cardsFace(0, rightStack),
+                      cardsFace(1, rightStack),
+                      cardsFace(2, rightStack),
+                      cardsFace(3, rightStack),
+                      cardsFace(4, rightStack),
+                      cardsFace(5, rightStack),
+                      cardsFace(6, rightStack),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+            Padding(
+              padding: EdgeInsets.only(top: 16.0),
+            ),
+            Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+
+                children: <Widget>[
+                  Text(
+                    noteText,
+                    style: TextStyle(color: Colors.indigo[50], fontSize: 20.0),
+                    textAlign: TextAlign.center,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 16.0),
+                  ),
+                  RaisedButton(
+                    padding: EdgeInsets.all(8.0),
+                    elevation: 4.0,
+                    child: Text(
+                      btnText,
+                      style: TextStyle(
+                        color: Colors.red[200],
+                        fontSize: 40
+                      ),
+                    ),
+                    color: Colors.green[900],
+                    onPressed: () {
+                      if (round != 3) {
+                        _stackSelection(context);
+                      } else {
+                        setState(() {
+                          _initMagic();
+                        });
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+              ]
       );
     }
 

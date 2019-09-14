@@ -1,0 +1,4 @@
+
+export PATH="$PATH:/home/thecoder/flutter/bin"
+export PATH="$PATH:/home/thecoder/bin/cache/dart-sdk/bin"
+export PATH="$PATH:/home/thecoder/.pub-cache/bin"
